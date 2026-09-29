@@ -24,13 +24,11 @@
     },
     { "type": "wokwi-vcc", "id": "vcc2", "top": 221.56, "left": -240, "attrs": {} },
     { "type": "wokwi-gnd", "id": "gnd2", "top": 336, "left": -192.6, "attrs": {} },
-    { "type": "wokwi-gnd", "id": "gnd4", "top": 259.2, "left": 249, "attrs": {} },
-    { "type": "wokwi-gnd", "id": "gnd5", "top": 48, "left": 143.4, "attrs": {} },
-    { "type": "wokwi-gnd", "id": "gnd6", "top": 48, "left": 249, "attrs": {} },
-    { "type": "wokwi-gnd", "id": "gnd3", "top": 240, "left": 172.2, "attrs": {} },
     { "type": "wokwi-dht22", "id": "dht1", "top": 67.5, "left": -159, "attrs": {} },
     { "type": "wokwi-vcc", "id": "vcc3", "top": 125.56, "left": -182.4, "attrs": {} },
-    { "type": "wokwi-gnd", "id": "gnd7", "top": 182.4, "left": -96.6, "attrs": {} }
+    { "type": "wokwi-gnd", "id": "gnd7", "top": 182.4, "left": -96.6, "attrs": {} },
+    { "type": "wokwi-vcc", "id": "vcc4", "top": 29.56, "left": 144, "attrs": {} },
+    { "type": "wokwi-vcc", "id": "vcc5", "top": 29.56, "left": 249.6, "attrs": {} }
   ],
   "connections": [
     [ "esp:TX", "$serialMonitor:RX", "", [] ],
@@ -40,7 +38,6 @@
     [ "led1:C", "gnd2:GND", "cyan", [ "v0" ] ],
     [ "relay1:NO", "vcc2:VCC", "cyan", [ "h30", "v-49.2" ] ],
     [ "led1:A", "relay1:COM", "cyan", [ "v0", "h19.2", "v-38.4", "h-38.4", "v38.4" ] ],
-    [ "sevseg2:COM.1", "gnd4:GND", "black", [ "h0" ] ],
     [ "esp:23", "sevseg1:A", "gold", [ "h67.2", "v-76.8", "h57.6" ] ],
     [ "esp:22", "sevseg1:B", "gold", [ "h76.8", "v-67.2", "h57.6" ] ],
     [ "esp:21", "sevseg1:C", "gold", [ "h76.8", "v19.2", "h48" ] ],
@@ -48,20 +45,19 @@
     [ "esp:18", "sevseg1:E", "gold", [ "h76.8", "v9.6", "h19.2" ] ],
     [ "esp:5", "sevseg1:F", "gold", [ "h57.6", "v-124.8", "h48" ] ],
     [ "esp:17", "sevseg1:G", "gold", [ "h48", "v-153.6", "h48" ] ],
-    [ "gnd5:GND", "sevseg1:COM.2", "black", [ "v0", "h-28.8", "v48", "h28.8" ] ],
     [ "relay1:IN", "esp:33", "green", [ "h0", "v67", "h259.2", "v-134.4" ] ],
     [ "sevseg2:A", "esp:16", "orange", [ "v-18.36", "h28.8", "v163.2", "h-115.2", "v-38.4" ] ],
     [ "sevseg2:B", "esp:4", "orange", [ "v-8.76", "h28.8", "v163.2", "h-134.4", "v-9.6" ] ],
-    [ "sevseg2:C", "esp:0", "orange", [ "v28.8", "h9.6", "v67.2", "h-115.2", "v-28.8" ] ],
     [ "sevseg2:D", "esp:2", "orange", [ "v28.8", "h-19.2", "v76.8", "h-76.8", "v-28.8" ] ],
-    [ "gnd6:GND", "sevseg2:COM.2", "black", [ "v-9.6", "h-28.8", "v67.2", "h28.8" ] ],
     [ "esp:15", "sevseg2:E", "orange", [ "v0", "h105.6", "v28.8", "h76.8", "v-96", "h19.2" ] ],
     [ "esp:13", "sevseg2:F", "orange", [ "h-19.05", "v57.6", "h288", "v-240", "h38.4" ] ],
     [ "esp:12", "sevseg2:G", "orange", [ "h-28.65", "v86.4", "h288", "v-240", "h38.4" ] ],
-    [ "sevseg1:COM.1", "gnd3:GND", "black", [ "h0", "v19.2" ] ],
     [ "dht1:GND", "gnd7:GND", "black", [ "v0" ] ],
     [ "dht1:VCC", "vcc3:VCC", "red", [ "v0", "h-28.8" ] ],
-    [ "dht1:SDA", "esp:32", "green", [ "v0" ] ]
+    [ "dht1:SDA", "esp:32", "green", [ "v0" ] ],
+    [ "sevseg1:COM.2", "vcc4:VCC", "green", [ "h0" ] ],
+    [ "vcc5:VCC", "sevseg2:COM.2", "red", [ "v0" ] ],
+    [ "sevseg2:C", "esp:14", "green", [ "v182.4", "h-364.8", "v-115.2", "h-9.6" ] ]
   ],
   "dependencies": {}
 }

@@ -11,7 +11,7 @@ constexpr uint8_t DHT_TYPE = DHT22;
 // Cada arreglo corresponde a un display y enumera los pines en orden A-G.
 // Segmentos en orden A, B, C, D, E, F, G. En cátodo común, HIGH enciende.
 constexpr uint8_t TENS_SEGMENTS[] = {23, 22, 21, 19, 18, 5, 17};
-constexpr uint8_t UNITS_SEGMENTS[] = {16, 4, 0, 2, 15, 13, 12};
+constexpr uint8_t UNITS_SEGMENTS[] = {16, 4, 14, 2, 15, 13, 12};
 
 // Para cada número, 1 enciende el segmento correspondiente y 0 lo apaga.
 constexpr uint8_t DIGIT_PATTERNS[10][7] = {
