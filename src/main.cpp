@@ -58,19 +58,19 @@ class SevenSegmentDisplay {
   }
 
   void showDigit(uint8_t digit) {
-    // Aplica al display el patrón de segmentos del dígito solicitado.
     for (uint8_t segment = 0; segment < 7; ++segment) {
-      digitalWrite(segmentPins_[segment], DIGIT_PATTERNS[digit][segment]);
+        // En Ánodo Común: LOW enciende, HIGH apaga
+        digitalWrite(segmentPins_[segment], DIGIT_PATTERNS[digit][segment] == 1 ? LOW : HIGH);
     }
-  }
+}
 
-  void clear() {
+void clear() {
     for (uint8_t segment = 0; segment < 7; ++segment) {
-      digitalWrite(segmentPins_[segment], LOW);
+        digitalWrite(segmentPins_[segment], HIGH); // HIGH apaga en Ánodo Común
     }
-  }
+}
 
- private:
+  private:
   const uint8_t* segmentPins_;
 };
 
